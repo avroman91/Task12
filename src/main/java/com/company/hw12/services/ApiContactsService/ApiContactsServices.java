@@ -24,6 +24,7 @@ public class ApiContactsServices {
     String findContactUrl = "https://mag-contacts-api.herokuapp.com/contacts/find";
 
 
+    StringBuilder sb = new StringBuilder();
     String token = null;
     boolean isAutrorised = false;
 
@@ -31,42 +32,43 @@ public class ApiContactsServices {
 
 
     public void createNewAccount(String name, String dateOfBorn, String password) {
-        StringBuilder createNewUser = new StringBuilder();
-        createNewUser.append("{\"login\":\")");
-        createNewUser.append(name);
-        createNewUser.append("\",\"password\":\"");
-        createNewUser.append(password);
-        createNewUser.append("\",\"date_born\":\"");
-        createNewUser.append(dateOfBorn);
-        createNewUser.append("\"}");
-        post(createNewUser.toString(), registerUrl,false);
+        sb.delete(0,sb.length());
+        sb.append("{\"login\":\")");
+        sb.append(name);
+        sb.append("\",\"password\":\"");
+        sb.append(password);
+        sb.append("\",\"date_born\":\"");
+        sb.append(dateOfBorn);
+        sb.append("\"}");
+        post(sb.toString(), registerUrl,false);
     }
 
     public void login(String name, String password) {
-        StringBuilder login = new StringBuilder();
-        login.append("{\"login\":\")");
-        login.append(name);
-        login.append("\",\"password\":\"");
-        login.append(password);
-        login.append("\"}");
-        post(login.toString(), loginUrl,false);
+        sb.delete(0,sb.length());
+        sb.append("{\"login\":\")");
+        sb.append(name);
+        sb.append("\",\"password\":\"");
+        sb.append(password);
+        sb.append("\"}");
+        post(sb.toString(), loginUrl,false);
     }
 
     public void add(String type, String value, String name) {
-        StringBuilder addNewContact = new StringBuilder();
-        addNewContact.append("{\"type\":\"");
-        addNewContact.append(type);
-        addNewContact.append("\",\"value\":\"");
-        addNewContact.append(value);
-        addNewContact.append("\",\"name\":\"");
-        addNewContact.append(name);
-        addNewContact.append("\"}");
-        System.out.println(addNewContact.toString());
-        post(addNewContact.toString(), addContactUrl,true);
+        sb.delete(0,sb.length());
+        sb.append("{\"type\":\"");
+        sb.append(type);
+        sb.append("\",\"value\":\"");
+        sb.append(value);
+        sb.append("\",\"name\":\"");
+        sb.append(name);
+        sb.append("\"}");
+        System.out.println(sb.toString());
+        post(sb.toString(), addContactUrl,true);
 
     }
 
     public void find (String typeOfSearch, String value) {
+        sb.delete(0,sb.length());
 
     }
 
