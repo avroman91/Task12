@@ -3,7 +3,7 @@ package com.company.hw12.services;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
-public class InternalAuthService implements AuthService{
+public class InternalAuthService implements AuthService {
 
     private final String password;
     private final String login;

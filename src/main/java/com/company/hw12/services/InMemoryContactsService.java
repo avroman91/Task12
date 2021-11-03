@@ -1,7 +1,6 @@
 package com.company.hw12.services;
 
 import com.company.hw12.domains.Contact;
-import com.company.hw12.domains.ContactType;
 
 import java.util.ArrayList;
 import java.util.List;

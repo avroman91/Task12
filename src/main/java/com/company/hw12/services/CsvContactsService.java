@@ -50,7 +50,7 @@ public class CsvContactsService extends AbstractFileContactsService {
     protected void save(List<Contact> contacts) {
 
         try {
-            Files.write(file,contacts.stream().map(this::toCsvString).collect(Collectors.toList()), StandardOpenOption.CREATE,StandardOpenOption.WRITE);
+            Files.write(file, contacts.stream().map(this::toCsvString).collect(Collectors.toList()), StandardOpenOption.CREATE, StandardOpenOption.WRITE);
         } catch (IOException e) {
             e.printStackTrace();
         }

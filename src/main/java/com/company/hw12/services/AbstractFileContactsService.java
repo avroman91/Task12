@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
 public abstract class AbstractFileContactsService implements ContactsService {
 
     protected final Path file;
+
     protected abstract List<Contact> load();
 
     protected abstract void save(List<Contact> contacts);

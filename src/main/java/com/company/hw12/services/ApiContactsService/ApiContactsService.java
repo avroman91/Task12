@@ -14,8 +14,8 @@ public class ApiContactsService implements ContactsService {
         apiCommunicationServices.add(contact.getType().getName(), contact.getValue(), contact.getName());
     }
 
-    public boolean authorization (String login, String password){
-        return apiCommunicationServices.login(login,password);
+    public boolean authorization(String login, String password) {
+        return apiCommunicationServices.login(login, password);
     }
 
     @Override
@@ -30,11 +30,11 @@ public class ApiContactsService implements ContactsService {
 
     @Override
     public List<Contact> getByNamePart(String namePart) {
-        return apiCommunicationServices.find(false,namePart);
+        return apiCommunicationServices.find(false, namePart);
     }
 
     @Override
     public List<Contact> getByValueStart(String valueStart) {
-        return apiCommunicationServices.find(true,valueStart);
+        return apiCommunicationServices.find(true, valueStart);
     }
 }

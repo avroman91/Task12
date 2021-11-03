@@ -8,15 +8,15 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class ContactItems {
 
-	@JsonProperty("name")
-	private String name;
+    @JsonProperty("name")
+    private String name;
 
-	@JsonProperty("id")
-	private Integer id;
+    @JsonProperty("id")
+    private Integer id;
 
-	@JsonProperty("type")
-	private String type;
+    @JsonProperty("type")
+    private String type;
 
-	@JsonProperty("value")
-	private String value;
+    @JsonProperty("value")
+    private String value;
 }

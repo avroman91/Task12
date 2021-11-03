@@ -22,7 +22,7 @@ public class LoginMenuItem extends BasicMenuItem {
         System.out.println("Please enter password: ");
         String password = scanner.nextLine();
         authService = new ApiAuthService();
-        authService.login(login,password);
+        authService.login(login, password);
         isAuth = authService.isAuthorised();
     }
 

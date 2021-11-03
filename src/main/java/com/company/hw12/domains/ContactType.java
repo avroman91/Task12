@@ -1,6 +1,5 @@
 package com.company.hw12.domains;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 

@@ -6,11 +6,11 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LoginResponse{
+public class LoginResponse {
 
-	@JsonProperty("token")
-	private String token;
+    @JsonProperty("token")
+    private String token;
 
-	@JsonProperty("status")
-	private String status;
+    @JsonProperty("status")
+    private String status;
 }
