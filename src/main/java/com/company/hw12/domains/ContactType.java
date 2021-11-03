@@ -1,12 +1,13 @@
 package com.company.hw12.domains;
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 
 @Getter
 @RequiredArgsConstructor
 public enum ContactType {
-    EMAIL("E-mail"), PHONE("Phone number");
+    email("email"), phone("Phone number");
     private final String name;
 
     public int getId() {

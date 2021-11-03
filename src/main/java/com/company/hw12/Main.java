@@ -1,10 +1,9 @@
 package com.company.hw12;
 
-import com.company.hw12.services.AuthService;
-import com.company.hw12.services.ContactsService;
-import com.company.hw12.services.CsvContactsService;
-import com.company.hw12.services.InternalAuthService;
+import com.company.hw12.services.*;
+import com.company.hw12.services.ApiContactsService.ApiContactsService;
 import com.company.hw12.ui.menu.ExitMenuItem;
+import com.company.hw12.ui.menu.LoginMenuItem;
 import com.company.hw12.ui.menu.Menu;
 import com.company.hw12.ui.menu.MenuItem;
 import com.company.hw12.ui.menu.contacts.AddContactMenuItem;
@@ -17,18 +16,18 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        AuthService authService = new InternalAuthService("admin", "admin");
 
-        Menu authMenu = new Menu(scanner,List.of(new ExitMenuItem("Exit")));
+        LoginMenuItem loginMenuItem = new LoginMenuItem("Login");
+        Menu authMenu = new Menu(scanner,List.of(loginMenuItem,new ExitMenuItem("Exit")));
         authMenu.run();
 
 
-        if (authService.isAuthorised()) {
-            ContactsService contactsService = new CsvContactsService(Path.of("1.csv"));
+
+        if (loginMenuItem.exit()) {
+            ContactsService contactsService = new ApiContactsService();
             ContactsView contactsView = new ConsoleContactsView(scanner);
 
             List<MenuItem> menuItemsList = List.of(new ShowAllMenuItem(contactsService, contactsView),

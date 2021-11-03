@@ -4,6 +4,7 @@ import com.company.hw12.domains.Contact;
 import lombok.RequiredArgsConstructor;
 
 import java.io.File;
+import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -21,6 +22,17 @@ public abstract class AbstractFileContactsService implements ContactsService {
                 .map(Contact::getId)
                 .max(Long::compare)
                 .orElse(0L) + 1;
+    }
+
+    public void checkForFileExisting(String fileName) {
+        File file = new File(fileName);
+        if (!file.exists()) {
+            try {
+                file.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     @Override
