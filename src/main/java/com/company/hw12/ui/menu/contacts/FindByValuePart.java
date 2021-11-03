@@ -14,6 +14,7 @@ public class FindByValuePart implements MenuItem {
     private final ContactsService contactsService;
     private final ContactsView contactsView;
     private final Scanner scanner;
+
     @Override
     public String getName() {
         return "Find contact by value part";

@@ -32,8 +32,8 @@ public class Main {
 
             List<MenuItem> menuItemsList = List.of(new ShowAllMenuItem(contactsService, contactsView),
                     new AddContactMenuItem(contactsService, contactsView),
-                    new FindByNamePart(contactsService,contactsView,scanner),
-                    new FindByValuePart(contactsService,contactsView,scanner),
+                    new FindByNamePart(contactsService, contactsView, scanner),
+                    new FindByValuePart(contactsService, contactsView, scanner),
                     new ExitMenuItem("Exit")
             );
             Menu menu = new Menu(scanner, menuItemsList);
