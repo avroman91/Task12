@@ -25,7 +25,7 @@ public class Main {
 
 
         if (loginMenuItem.exit()) {
-            ContactsService contactsService = new ApiContactsService();
+            ContactsService contactsService = new ApiContactsService(loginMenuItem.getLogin(), loginMenuItem.getPassword());
             ContactsView contactsView = new ConsoleContactsView(scanner);
 
             List<MenuItem> menuItemsList = List.of(new ShowAllMenuItem(contactsService, contactsView),

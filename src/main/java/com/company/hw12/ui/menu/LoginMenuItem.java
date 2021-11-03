@@ -10,6 +10,17 @@ public class LoginMenuItem extends BasicMenuItem {
     AuthService authService;
     boolean isAuth = false;
 
+    public String getLogin() {
+        return login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    String login;
+    String password;
+
     public LoginMenuItem(String name) {
         super(name);
     }
@@ -18,9 +29,9 @@ public class LoginMenuItem extends BasicMenuItem {
     public void run() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Please enter login: ");
-        String login = scanner.nextLine();
+        login = scanner.nextLine();
         System.out.println("Please enter password: ");
-        String password = scanner.nextLine();
+        password = scanner.nextLine();
         authService = new ApiAuthService();
         authService.login(login, password);
         isAuth = authService.isAuthorised();

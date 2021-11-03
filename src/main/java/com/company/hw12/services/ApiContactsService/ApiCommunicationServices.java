@@ -34,7 +34,8 @@ public class ApiCommunicationServices {
 
 
     boolean isAutrorised;
-    protected String token = null;
+
+    private String token;
 
     public void createNewAccount(String name, String dateOfBorn, String password) {
         sb.delete(0, sb.length());
